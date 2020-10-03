@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/login",
+    "bodyPatterns" : [ {
+      "equalToJson" : "{\"username\":\"ragnar\",\"password\":\"1234\"}",
+      "ignoreArrayOrder" : true,
+      "ignoreExtraElements" : true
+    } ]
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

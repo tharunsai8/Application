@@ -1,0 +1,11 @@
+assignment2\PersonGateway.class
+assignment2\Main.class
+assignment2\view\ViewType.class
+assignment2\view\ViewSwitcher$1.class
+assignment2\view\ViewSwitcher.class
+assignment2\controller\LoginController.class
+assignment2\model\Person.class
+assignment2\controller\PersonListController.class
+assignment2\model\PersonParameters.class
+assignment2\controller\PersonDetailController.class
+assignment2\SessionGateway.class

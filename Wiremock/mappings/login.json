@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/login",
+    "bodyPatterns" : [ {
+      "equalToJson" : "{\"username\":\"ragnar\",\"password\":\"flapjacks\"}",
+      "ignoreArrayOrder" : true,
+      "ignoreExtraElements" : true
+    } ]
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"session_id\":\"i am a session token\"}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

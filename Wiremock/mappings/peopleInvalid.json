@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/people",
+    "headers" : {
+      "Authorization" : {
+        "contains" : "bad session token"
+      }
+    }
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

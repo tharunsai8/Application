@@ -1,0 +1,1006 @@
+21:53:21.258 INFO  assignment2.controller.LoginController : dljfjgjzfg LOGGED IN
+21:53:26.040 INFO  assignment2.controller.PersonListController : READING Anita Vacay
+21:53:28.619 INFO  assignment2.controller.PersonDetailController : UPDATING Anita Vacay
+18:02:05.252 INFO  assignment2.controller.LoginController : dfgdfgd LOGGED IN
+18:27:54.174 INFO  assignment2.controller.LoginController :  LOGGED IN
+18:31:26.344 INFO  assignment2.controller.PersonListController : READING Sag Bobet
+19:08:53.432 INFO  model.SessionGateway : credentials: {"password":"dfgdfg","username":"fdgdfg"}
+19:08:53.584 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "dfgdfg",
+  "password" : "flapjacks"                                 |   "username" : "fdgdfg"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+19:11:08.637 INFO  model.SessionGateway : credentials: {"password":"cvbcvb","username":"bcvb"}
+19:11:08.692 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "cvbcvb",
+  "password" : "flapjacks"                                 |   "username" : "bcvb"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+19:11:08.699 INFO  assignment2.controller.LoginController : bcvb INVALID CREDENTIALS
+19:12:16.153 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"regnar"}
+19:12:16.166 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "flapjacks",
+  "password" : "flapjacks"                                 |   "username" : "regnar"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+19:12:16.168 INFO  assignment2.controller.LoginController : regnar INVALID CREDENTIALS
+19:12:32.975 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+19:12:33.027 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+19:12:33.036 INFO  model.SessionGateway : Session token: i am a session token
+19:12:33.037 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+19:12:33.051 INFO  assignment2.controller.LoginController : ragnar INVALID CREDENTIALS
+19:14:09.451 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+19:14:09.523 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+19:14:09.525 INFO  model.SessionGateway : Session token: i am a session token
+19:14:09.526 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+19:17:23.100 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+19:17:23.147 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+19:17:23.148 INFO  model.SessionGateway : Session token: i am a session token
+19:17:23.149 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+19:20:00.530 INFO  model.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+19:20:00.606 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "1234",
+  "password" : "flapjacks"                                 |   "username" : "ragnar"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+19:20:00.609 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+19:21:27.134 INFO  model.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+19:21:27.185 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "1234",
+  "password" : "flapjacks"                                 |   "username" : "ragnar"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+19:21:27.187 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+19:23:47.657 INFO  model.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+19:23:47.810 INFO  model.SessionGateway : Login response as a string: 
+19:23:47.811 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+19:24:52.109 INFO  model.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+19:24:52.283 INFO  model.SessionGateway : Login response as a string: {"You are not authentic"}
+19:24:52.284 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+19:25:45.434 INFO  model.SessionGateway : credentials: {"password":"","username":""}
+19:25:45.503 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "",
+  "password" : "flapjacks"                                 |   "username" : ""
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+19:25:45.506 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+19:26:02.392 INFO  model.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+19:26:02.400 INFO  model.SessionGateway : Login response as a string: {"You are not authentic"}
+19:26:02.401 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+19:26:03.911 INFO  model.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+19:26:03.920 INFO  model.SessionGateway : Login response as a string: {"You are not authentic"}
+19:26:03.920 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+19:26:04.476 INFO  model.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+19:26:04.480 INFO  model.SessionGateway : Login response as a string: {"You are not authentic"}
+19:26:04.481 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+20:04:58.754 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+20:04:58.801 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+20:04:58.803 INFO  model.SessionGateway : Session token: i am a session token
+20:04:58.803 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+20:04:58.848 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+20:13:58.884 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+20:13:59.049 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+20:13:59.050 INFO  model.SessionGateway : Session token: i am a session token
+20:13:59.051 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+20:13:59.061 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Bob","lastName":"Saget","DOB":"1995-2-23"}]
+20:16:43.103 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+20:16:43.244 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+20:16:43.245 INFO  model.SessionGateway : Session token: i am a session token
+20:16:43.246 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+20:16:43.255 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Bob","lastName":"Saget","DOB":"1995-02-23"}]
+20:25:01.884 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+20:25:02.024 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+20:25:02.026 INFO  model.SessionGateway : Session token: i am a session token
+20:25:02.027 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+20:25:02.036 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Bob","lastName":"Saget","DOB":"1995-02-23"}, {"id":2,"firstName":"Tom","lastName":"Bomb","DOB":"1985-04-01"}, {"id":3,"firstName":"Buster","lastName":"Horn","DOB":"1990-10-14"}]
+20:25:11.772 INFO  assignment2.controller.PersonListController : READING Bob Saget
+20:25:21.953 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Bob","lastName":"Saget","DOB":"1995-02-23"}, {"id":2,"firstName":"Tom","lastName":"Bomb","DOB":"1985-04-01"}, {"id":3,"firstName":"Buster","lastName":"Horn","DOB":"1990-10-14"}]
+20:25:41.029 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+20:27:18.387 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+20:27:18.433 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+20:27:18.435 INFO  model.SessionGateway : Session token: i am a session token
+20:27:18.436 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+20:27:18.441 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Bob","lastName":"Saget","DOB":"1995-02-23"}, {"id":2,"firstName":"Tom","lastName":"Bomb","DOB":"1985-04-01"}, {"id":3,"firstName":"Buster","lastName":"Horn","DOB":"1990-10-14"}]
+20:27:30.398 INFO  assignment2.controller.PersonListController : READING Bob Saget
+20:27:38.267 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Bob","lastName":"Saget","DOB":"1995-02-23"}, {"id":2,"firstName":"Tom","lastName":"Bomb","DOB":"1985-04-01"}, {"id":3,"firstName":"Buster","lastName":"Horn","DOB":"1990-10-14"}]
+20:37:21.870 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+20:37:22.027 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+20:37:22.028 INFO  model.SessionGateway : Session token: i am a session token
+20:37:22.030 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+20:37:22.041 ERROR model.PersonGateway : I DON'T KNOW YOU!!!
+20:40:12.753 INFO  model.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+20:40:12.801 INFO  model.SessionGateway : Login response as a string: {"You are not authentic"}
+20:40:12.802 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+21:13:46.852 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+21:13:47.014 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+21:13:47.016 INFO  model.SessionGateway : Session token: i am a session token
+21:13:47.017 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+21:13:47.029 ERROR model.PersonGateway : I DON'T KNOW YOU!!!
+21:14:14.924 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+21:14:15.000 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+21:14:15.002 INFO  model.SessionGateway : Session token: i am a session token
+21:14:15.002 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+21:14:15.008 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Bob","lastName":"Saget","DOB":"1995-02-23"}, {"id":2,"firstName":"Tom","lastName":"Bomb","DOB":"1985-04-01"}, {"id":3,"firstName":"Buster","lastName":"Horn","DOB":"1990-10-14"}]
+21:19:27.019 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+21:19:29.456 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Bob","lastName":"Saget","DOB":"1995-02-23"}, {"id":2,"firstName":"Tom","lastName":"Bomb","DOB":"1985-04-01"}, {"id":3,"firstName":"Buster","lastName":"Horn","DOB":"1990-10-14"}]
+20:57:09.112 INFO  model.SessionGateway : credentials: {"password":"","username":""}
+20:57:09.336 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "",
+  "password" : "1234"                                      |   "username" : ""
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+20:57:09.338 ERROR model.SessionGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+20:57:09.339 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+20:57:12.941 INFO  model.SessionGateway : credentials: {"password":"asdas","username":"dasda"}
+20:57:12.957 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "asdas",
+  "password" : "1234"                                      |   "username" : "dasda"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+20:57:12.958 ERROR model.SessionGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+20:57:12.959 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+20:57:20.124 INFO  model.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+20:57:20.142 INFO  model.SessionGateway : Login response as a string: 
+20:57:20.142 ERROR model.SessionGateway : I DON'T KNOW YOU!!!
+20:57:20.143 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+20:57:35.412 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+20:57:35.424 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+20:57:35.426 INFO  model.SessionGateway : Session token: i am a session token
+20:57:35.426 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+20:57:35.437 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+21:23:40.774 INFO  model.SessionGateway : credentials: {"password":"flapjakcs","username":"ragnar"}
+21:23:40.832 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "flapjakcs",
+  "password" : "1234"                                      |   "username" : "ragnar"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+21:23:40.834 ERROR model.SessionGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+21:23:40.835 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+21:23:50.365 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+21:23:50.372 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+21:23:50.374 INFO  model.SessionGateway : Session token: i am a session token
+21:23:50.374 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+21:23:50.380 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+21:36:06.544 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+21:36:06.591 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+21:36:06.592 INFO  model.SessionGateway : Session token: i am a session token
+21:36:06.593 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+21:36:06.598 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+21:50:05.944 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+21:50:05.993 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+21:50:05.995 INFO  model.SessionGateway : Session token: i am a session token
+21:50:05.996 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+21:50:06.000 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+21:50:14.020 INFO  assignment2.controller.PersonListController : DELETING Tom Bomb
+21:50:14.031 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+21:53:24.035 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+21:53:24.083 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+21:53:24.085 INFO  model.SessionGateway : Session token: i am a session token
+21:53:24.086 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+21:53:24.091 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+21:53:27.133 INFO  assignment2.controller.PersonListController : DELETING Tom Bomb
+21:53:27.144 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+22:01:58.751 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:01:58.935 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:01:58.936 INFO  model.SessionGateway : Session token: i am a session token
+22:01:58.937 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:01:58.947 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:02:05.656 INFO  assignment2.controller.PersonListController : DELETING Tom Bomb
+22:02:26.731 INFO  assignment2.controller.PersonDetailController : CREATING first name last name
+22:02:26.737 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:05:58.119 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:05:58.301 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:05:58.302 INFO  model.SessionGateway : Session token: i am a session token
+22:05:58.303 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:05:58.314 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:06:00.155 INFO  assignment2.controller.PersonListController : DELETING Tom Bomb
+22:12:45.434 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:12:45.507 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:12:45.509 INFO  model.SessionGateway : Session token: i am a session token
+22:12:45.510 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:12:45.565 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+22:16:05.563 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:16:05.611 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:16:05.612 INFO  model.SessionGateway : Session token: i am a session token
+22:16:05.613 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:16:05.629 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+22:16:19.178 INFO  assignment2.controller.PersonListController : DELETING Tom Bomb
+22:16:19.183 ERROR model.PersonGateway : I DON'T KNOW YOU!!!
+22:16:54.041 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:16:54.090 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:16:54.092 INFO  model.SessionGateway : Session token: i am a session token
+22:16:54.093 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:16:54.098 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:16:56.222 INFO  assignment2.controller.PersonListController : DELETING Tom Bomb
+22:22:14.585 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:22:14.632 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:22:14.633 INFO  model.SessionGateway : Session token: i am a session token
+22:22:14.634 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:22:14.639 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:22:53.334 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:22:53.406 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:22:53.407 INFO  model.SessionGateway : Session token: i am a session token
+22:22:53.408 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:22:53.413 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:25:09.639 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:25:09.687 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:25:09.688 INFO  model.SessionGateway : Session token: i am a session token
+22:25:09.689 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:25:09.694 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:25:53.034 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:25:53.083 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:25:53.084 INFO  model.SessionGateway : Session token: i am a session token
+22:25:53.085 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:25:53.090 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:26:42.212 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:26:42.260 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:26:42.262 INFO  model.SessionGateway : Session token: i am a session token
+22:26:42.263 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:26:42.267 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:51:33.741 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:51:33.812 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:51:33.813 INFO  model.SessionGateway : Session token: i am a session token
+22:51:33.814 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:51:33.819 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:52:30.469 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:52:30.516 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:52:30.517 INFO  model.SessionGateway : Session token: i am a session token
+22:52:30.518 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:52:30.523 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:54:14.944 INFO  assignment2.controller.PersonDetailController : CREATING first name last name
+22:54:14.950 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:54:20.165 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:54:23.581 INFO  assignment2.controller.PersonListController : DELETING Tom Bomb
+22:54:26.168 INFO  assignment2.controller.PersonDetailController : CREATING first name last name
+22:54:26.172 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:55:34.056 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:55:34.102 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:55:34.104 INFO  model.SessionGateway : Session token: i am a session token
+22:55:34.105 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:55:34.109 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:56:21.956 INFO  assignment2.controller.PersonDetailController : CREATING first name last name
+22:56:21.961 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:56:31.909 INFO  assignment2.controller.PersonListController : DELETING first name last name
+22:56:31.918 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+22:56:43.466 INFO  assignment2.controller.PersonListController : READING first name last name
+22:56:46.701 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+23:33:16.604 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+23:33:16.784 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+23:33:16.785 INFO  model.SessionGateway : Session token: i am a session token
+23:33:16.786 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+23:33:16.796 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+23:33:56.341 INFO  assignment2.controller.PersonDetailController : CREATING Lou Smith
+23:33:56.343 INFO  model.PersonGateway : new person: {"firstName":"Lou","lastName":"Smith","dateOfBirth":"1990-01-01"}
+23:33:56.352 INFO  model.PersonGateway : Fetch response: {"id":"4"}
+23:33:56.357 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+23:40:31.722 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+23:40:31.901 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+23:40:31.902 INFO  model.SessionGateway : Session token: i am a session token
+23:40:31.903 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+23:40:31.914 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+23:40:54.738 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+23:40:54.791 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+23:40:54.792 INFO  model.SessionGateway : Session token: i am a session token
+23:40:54.793 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+23:40:54.798 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+23:41:08.988 INFO  assignment2.controller.PersonDetailController : CREATING Lou Smith
+23:41:08.990 INFO  model.PersonGateway : new person: {"lastName":"Smith","fstName":"Lou","dateOfBirth":"1990-01-01"}
+23:41:08.996 INFO  model.PersonGateway : Fetch response: 
+23:42:41.357 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+23:42:41.429 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+23:42:41.431 INFO  model.SessionGateway : Session token: i am a session token
+23:42:41.432 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+23:42:41.437 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+23:42:50.107 INFO  assignment2.controller.PersonDetailController : CREATING Lou Smith
+23:42:50.109 INFO  model.PersonGateway : new person: {"lastName":"Smith","fstName":"Lou","dateOfBirth":"1990-01-01"}
+23:42:50.121 INFO  model.PersonGateway : Fetch response: 
+23:43:56.466 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+23:43:56.512 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+23:43:56.514 INFO  model.SessionGateway : Session token: i am a session token
+23:43:56.515 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+23:43:56.520 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+23:44:10.314 INFO  assignment2.controller.PersonDetailController : CREATING Lou Smith
+23:44:10.315 INFO  model.PersonGateway : new person: {"lastName":"Smith","fstName":"Lou","dateOfBirth":"1990-01-01"}
+23:44:10.320 INFO  model.PersonGateway : Fetch response: 
+23:44:10.325 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+10:43:10.678 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+10:43:10.728 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+10:43:10.729 INFO  model.SessionGateway : Session token: i am a session token
+10:43:10.730 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+10:43:10.735 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+19:57:34.308 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+20:01:16.443 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+20:01:16.635 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+20:01:16.643 INFO  model.SessionGateway : Session token: i am a session token
+20:01:16.644 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+20:01:16.665 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+20:01:25.768 INFO  assignment2.controller.PersonListController : DELETING Tom Bomb
+20:01:37.124 INFO  assignment2.controller.PersonDetailController : CREATING first name last name
+20:01:37.125 INFO  model.PersonGateway : new person: {"firstName":"first name","lastName":"last name","dateOfBirth":"2000-01-01"}
+20:01:37.154 INFO  model.PersonGateway : Fetch response: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/people                                                    | /people
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "fstName" : "Lou",                                       |   "firstName" : "first name",
+  "lastName" : "Smith",                                    |   "lastName" : "last name",
+  "dateOfBirth" : "1990-01-01"                             |   "dateOfBirth" : "2000-01-01"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+20:01:52.488 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+20:06:29.342 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+20:18:36.994 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+20:18:37.041 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+20:18:37.042 INFO  model.SessionGateway : Session token: i am a session token
+20:18:37.043 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+20:18:37.048 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+20:18:53.129 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+20:18:54.446 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+20:18:54.451 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+20:18:57.292 INFO  assignment2.controller.PersonDetailController : CREATING first name last name
+20:18:57.294 INFO  model.PersonGateway : new person: {"firstName":"first name","lastName":"last name","dateOfBirth":"2000-01-01"}
+20:18:57.314 INFO  model.PersonGateway : Fetch response: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/people                                                    | /people
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "fstName" : "Lou",                                       |   "firstName" : "first name",
+  "lastName" : "Smith",                                    |   "lastName" : "last name",
+  "dateOfBirth" : "1990-01-01"                             |   "dateOfBirth" : "2000-01-01"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+20:20:29.554 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+20:20:29.602 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+20:20:29.603 INFO  model.SessionGateway : Session token: i am a session token
+20:20:29.604 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+20:20:29.609 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+20:20:31.808 INFO  assignment2.controller.PersonDetailController : CREATING first name last name
+20:20:31.809 INFO  model.PersonGateway : new person: {"firstName":"first name","lastName":"last name","dateOfBirth":"2000-01-01"}
+20:20:31.824 INFO  model.PersonGateway : Fetch response: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/people                                                    | /people
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "fstName" : "Lou",                                       |   "firstName" : "first name",
+  "lastName" : "Smith",                                    |   "lastName" : "last name",
+  "dateOfBirth" : "1990-01-01"                             |   "dateOfBirth" : "2000-01-01"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+20:21:01.985 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+20:21:02.032 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+20:21:02.034 INFO  model.SessionGateway : Session token: i am a session token
+20:21:02.035 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+20:21:02.040 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+20:21:04.980 INFO  assignment2.controller.PersonDetailController : CREATING first name last name
+20:21:04.982 INFO  model.PersonGateway : new person: {"firstName":"first name","lastName":"last name","dateOfBirth":"2000-01-01"}
+20:21:04.996 INFO  model.PersonGateway : Fetch response: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/people                                                    | /people
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "fstName" : "Lou",                                       |   "firstName" : "first name",
+  "lastName" : "Smith",                                    |   "lastName" : "last name",
+  "dateOfBirth" : "1990-01-01"                             |   "dateOfBirth" : "2000-01-01"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+20:21:05.002 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+20:22:30.617 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+22:10:17.159 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:10:17.213 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:10:17.214 INFO  model.SessionGateway : Session token: i am a session token
+22:10:17.222 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:10:17.235 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:10:22.047 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+22:10:25.221 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+22:10:25.231 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:17:28.323 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+22:17:28.374 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+22:17:28.375 INFO  model.SessionGateway : Session token: i am a session token
+22:17:28.376 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+22:17:28.383 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+22:17:32.351 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+22:17:33.354 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+22:17:33.361 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+11:51:06.727 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+11:51:06.778 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+11:51:06.779 INFO  model.SessionGateway : Session token: i am a session token
+11:51:06.780 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+11:51:06.787 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+11:51:10.204 INFO  assignment2.controller.PersonDetailController : CREATING first name last name
+11:51:10.207 INFO  model.PersonGateway : new person: {"firstName":"first name","lastName":"last name","dateOfBirth":"2000-01-01"}
+11:51:10.238 INFO  model.PersonGateway : Fetch response: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/people                                                    | /people
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "fstName" : "Lou",                                       |   "firstName" : "first name",
+  "lastName" : "Smith",                                    |   "lastName" : "last name",
+  "dateOfBirth" : "1990-01-01"                             |   "dateOfBirth" : "2000-01-01"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+11:51:10.245 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+11:51:14.281 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+11:51:15.013 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+11:51:15.021 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+11:55:05.852 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+11:55:05.905 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+11:55:05.906 INFO  model.SessionGateway : Session token: i am a session token
+11:55:05.907 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+11:55:05.915 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+11:55:09.752 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+11:55:11.522 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+11:55:11.552 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+11:55:14.024 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+11:55:14.780 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+11:55:14.787 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+11:55:16.213 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+11:55:16.902 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+11:55:16.965 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+11:55:18.332 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+11:55:22.787 INFO  assignment2.controller.PersonDetailController : UPDATING Steve Bomb
+11:55:22.795 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+11:56:02.082 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+11:56:02.132 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+11:56:02.133 INFO  model.SessionGateway : Session token: i am a session token
+11:56:02.134 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+11:56:02.141 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+11:56:05.035 INFO  assignment2.controller.PersonDetailController : CREATING first name last name
+11:56:05.041 INFO  model.PersonGateway : new person: {"firstName":"first name","lastName":"last name","dateOfBirth":"2000-01-01"}
+11:56:05.075 INFO  model.PersonGateway : Fetch response: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/people                                                    | /people
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "fstName" : "Lou",                                       |   "firstName" : "first name",
+  "lastName" : "Smith",                                    |   "lastName" : "last name",
+  "dateOfBirth" : "1990-01-01"                             |   "dateOfBirth" : "2000-01-01"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+11:56:05.081 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+11:56:24.537 INFO  assignment2.controller.PersonListController : DELETING Tom Bomb
+11:56:26.407 INFO  assignment2.controller.PersonDetailController : CREATING first name last name
+11:56:26.411 INFO  model.PersonGateway : new person: {"firstName":"first name","lastName":"last name","dateOfBirth":"2000-01-01"}
+11:56:26.460 INFO  model.PersonGateway : Fetch response: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/people                                                    | /people
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "fstName" : "Lou",                                       |   "firstName" : "first name",
+  "lastName" : "Smith",                                    |   "lastName" : "last name",
+  "dateOfBirth" : "1990-01-01"                             |   "dateOfBirth" : "2000-01-01"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+11:56:26.469 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+11:56:27.979 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+11:56:30.253 INFO  assignment2.controller.PersonDetailController : UPDATING Tomggfgf Bomb
+11:56:30.260 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:20:06.290 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+12:20:06.339 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+12:20:06.340 INFO  model.SessionGateway : Session token: i am a session token
+12:20:06.341 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+12:20:06.357 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:20:11.236 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:20:17.294 INFO  assignment2.controller.PersonDetailController : UPDATING tommmmmm Bomb
+12:20:17.297 INFO  model.PersonGateway : update person: {}
+12:20:17.309 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:20:17.315 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:21:41.798 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+12:21:41.869 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+12:21:41.870 INFO  model.SessionGateway : Session token: i am a session token
+12:21:41.871 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+12:21:41.878 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:21:43.781 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:21:45.551 INFO  assignment2.controller.PersonDetailController : UPDATING Tomdfsdf Bomb
+12:23:14.703 INFO  model.PersonGateway : update person: {}
+12:23:14.714 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:23:57.679 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+12:23:57.749 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+12:23:57.750 INFO  model.SessionGateway : Session token: i am a session token
+12:23:57.751 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+12:23:57.758 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:24:16.562 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:26:07.359 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+12:26:07.421 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+12:26:07.422 INFO  model.SessionGateway : Session token: i am a session token
+12:26:07.423 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+12:26:07.430 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:26:10.065 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:26:53.173 INFO  assignment2.controller.PersonDetailController : UPDATING Tomdfgdfg Bomb
+12:27:10.417 INFO  model.PersonGateway : update person: {}
+12:29:14.412 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+12:29:14.488 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+12:29:14.489 INFO  model.SessionGateway : Session token: i am a session token
+12:29:14.490 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+12:29:14.497 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:29:16.686 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:29:28.114 INFO  assignment2.controller.PersonDetailController : UPDATING Tomasd Bomb
+12:29:56.367 INFO  model.PersonGateway : update person: {}
+12:37:45.592 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+12:37:45.641 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+12:37:45.642 INFO  model.SessionGateway : Session token: i am a session token
+12:37:45.643 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+12:37:45.650 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:37:48.437 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:37:51.847 INFO  assignment2.controller.PersonDetailController : UPDATING Tomertert Bomb
+12:37:51.851 INFO  model.PersonGateway : update person: {"firstName":"Tomertert"}
+12:37:51.862 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:37:51.868 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:39:30.633 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+12:39:30.684 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+12:39:30.685 INFO  model.SessionGateway : Session token: i am a session token
+12:39:30.686 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+12:39:30.725 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:39:32.651 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:39:34.061 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+12:39:34.065 INFO  model.PersonGateway : update person: {"lastName":"Bombdfgdg"}
+12:39:34.075 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:39:34.081 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:39:36.629 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:39:37.949 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+12:39:44.591 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+12:39:44.593 INFO  model.PersonGateway : update person: {"dateOfBirth":"1995-02-21"}
+12:39:44.602 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:39:44.606 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:39:51.177 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:39:53.421 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+12:39:53.423 INFO  model.PersonGateway : update person: {"firstName":"Tomdfsdfs","lastName":"Bombdfsdf"}
+12:39:53.434 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:39:53.439 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:39:57.251 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:40:01.214 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+12:40:01.216 INFO  model.PersonGateway : update person: {"firstName":"Tomsdfsdf","lastName":"Bombsdfsfds","dateOfBirth":"1995-02-21"}
+12:40:01.226 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:40:01.230 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:42:36.813 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+12:42:36.968 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+12:42:36.969 INFO  model.SessionGateway : Session token: i am a session token
+12:42:36.970 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+12:42:36.981 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:42:38.730 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:42:48.142 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+12:42:48.144 INFO  model.PersonGateway : update person: {"firstName":"Bobby"}
+12:42:48.157 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:52:17.467 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+12:52:17.518 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+12:52:17.519 INFO  model.SessionGateway : Session token: i am a session token
+12:52:17.520 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+12:52:17.528 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:52:19.586 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:52:20.260 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+12:52:20.264 INFO  model.PersonGateway : update person: {}
+12:52:20.289 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:52:20.296 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:52:23.852 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:52:25.425 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+12:52:25.428 INFO  model.PersonGateway : update person: {"firstName":"Tomsdfsdf"}
+12:52:25.446 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:52:25.452 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+12:52:30.856 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:52:37.234 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+12:52:37.236 INFO  model.PersonGateway : update person: {"firstName":"Bobby"}
+12:52:37.245 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+13:03:33.167 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+13:03:33.217 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+13:03:33.219 INFO  model.SessionGateway : Session token: i am a session token
+13:03:33.220 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+13:03:33.232 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+13:03:40.065 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+13:03:46.497 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+13:03:46.501 INFO  model.PersonGateway : update person: {"firstName":"6"}
+13:03:46.513 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+13:03:46.519 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+13:03:48.494 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+13:04:22.491 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+13:04:22.493 INFO  model.PersonGateway : update person: {"lastName":"fghfh","dateOfBirth":"2020-10-02"}
+13:04:22.507 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+13:04:22.512 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+13:04:54.846 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+13:05:09.168 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+13:05:09.171 INFO  model.PersonGateway : update person: {"dateOfBirth":"2020-10-01"}
+13:05:09.184 ERROR model.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+13:05:09.189 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+13:05:11.228 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+12:41:48.495 INFO  model.SessionGateway : credentials: {"password":"fsf","username":"adsdsfs"}
+12:41:48.554 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "fsf",
+  "password" : "1234"                                      |   "username" : "adsdsfs"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+12:41:48.555 ERROR model.SessionGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:41:48.556 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+12:42:38.987 INFO  model.SessionGateway : credentials: {"password":"","username":""}
+12:42:39.043 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "",
+  "password" : "1234"                                      |   "username" : ""
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+12:42:39.044 ERROR model.SessionGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:42:39.045 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+12:44:28.289 INFO  model.SessionGateway : credentials: {"password":"","username":""}
+12:44:28.346 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "",
+  "password" : "1234"                                      |   "username" : ""
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+12:44:28.346 ERROR model.SessionGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:44:28.347 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+12:44:32.263 INFO  model.SessionGateway : credentials: {"password":"","username":""}
+12:44:32.274 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "",
+  "password" : "1234"                                      |   "username" : ""
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+12:44:32.275 ERROR model.SessionGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:44:32.275 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+12:45:32.972 INFO  model.SessionGateway : credentials: {"password":"","username":"ragnar flap"}
+12:45:33.030 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "",
+  "password" : "1234"                                      |   "username" : "ragnar flap"
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+12:45:33.031 ERROR model.SessionGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:45:33.032 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+12:45:51.373 INFO  model.SessionGateway : credentials: {"password":"","username":""}
+12:45:51.429 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "",
+  "password" : "1234"                                      |   "username" : ""
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+12:45:51.430 ERROR model.SessionGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+12:45:51.431 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+13:39:32.721 INFO  model.SessionGateway : credentials: {"password":"","username":""}
+13:39:32.818 INFO  model.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "",
+  "password" : "1234"                                      |   "username" : ""
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+13:39:32.821 ERROR model.SessionGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+13:39:32.822 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+13:39:55.661 INFO  model.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+13:39:55.667 INFO  model.SessionGateway : Login response as a string: 
+13:39:55.667 ERROR model.SessionGateway : I DON'T KNOW YOU!!!
+13:39:55.668 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+13:40:30.229 INFO  model.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+13:40:30.279 INFO  model.SessionGateway : Login response as a string: 
+13:40:30.280 ERROR model.SessionGateway : I DON'T KNOW YOU!!!
+13:40:30.282 INFO  assignment2.controller.LoginController : INVALID CREDENTIALS
+13:40:45.302 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+13:40:45.307 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+13:40:45.309 INFO  model.SessionGateway : Session token: i am a session token
+13:40:45.310 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+13:40:45.314 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+13:44:45.023 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+13:44:45.093 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+13:44:45.095 INFO  model.SessionGateway : Session token: i am a session token
+13:44:45.096 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+13:44:45.100 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","DOB":"1995-02-23"}]
+13:46:16.956 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+13:46:17.109 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+13:46:17.111 INFO  model.SessionGateway : Session token: i am a session token
+13:46:17.112 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+13:46:17.121 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","dateOfBirth":"1995-02-23"}]
+13:47:15.120 INFO  model.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+13:47:15.196 INFO  model.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+13:47:15.198 INFO  model.SessionGateway : Session token: i am a session token
+13:47:15.199 INFO  assignment2.controller.LoginController : ragnar LOGGED IN
+13:47:15.205 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","dateOfBirth":"1995-02-23"}]
+13:48:15.917 INFO  assignment2.controller.PersonListController : READING Tom Bomb
+13:48:21.070 INFO  assignment2.controller.PersonDetailController : UPDATING Tom Bomb
+13:48:21.072 INFO  model.PersonGateway : update person: {"firstName":"Bobby"}
+13:48:21.094 INFO  model.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","dateOfBirth":"1995-02-23"}]
+14:45:37.093 INFO  assignment2.SessionGateway : credentials: {"password":"","username":""}
+14:45:37.260 INFO  assignment2.SessionGateway : Login response as a string: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                                             | Request                                                  |
+-----------------------------------------------------------------------------------------------------------------------
+                                                           |
+POST                                                       | POST
+/login                                                     | /login
+                                                           |
+{                                                          | {                                                   <<<<< Body does not match
+  "username" : "ragnar",                                   |   "password" : "",
+  "password" : "1234"                                      |   "username" : ""
+}                                                          | }
+                                                           |
+-----------------------------------------------------------------------------------------------------------------------
+
+14:45:37.262 ERROR assignment2.SessionGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
+14:45:37.263 INFO  controller.LoginController : INVALID CREDENTIALS
+14:45:47.041 INFO  assignment2.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+14:45:47.059 INFO  assignment2.SessionGateway : Login response as a string: 
+14:45:47.060 ERROR assignment2.SessionGateway : I DON'T KNOW YOU!!!
+14:45:47.060 INFO  controller.LoginController : INVALID CREDENTIALS
+14:47:18.863 INFO  assignment2.SessionGateway : credentials: {"password":"1234","username":"ragnar"}
+14:47:18.918 INFO  assignment2.SessionGateway : Login response as a string: 
+14:47:18.919 ERROR assignment2.SessionGateway : 401: I DON'T KNOW YOU!!!
+14:47:18.920 INFO  controller.LoginController : INVALID CREDENTIALS
+14:47:32.991 INFO  assignment2.SessionGateway : credentials: {"password":"flapjacks","username":"ragnar"}
+14:47:33.003 INFO  assignment2.SessionGateway : Login response as a string: {"session_id":"i am a session token"}
+14:47:33.005 INFO  assignment2.SessionGateway : Session token: i am a session token
+14:47:33.006 INFO  controller.LoginController : ragnar LOGGED IN
+14:47:33.015 INFO  assignment2.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","dateOfBirth":"1995-02-23"}]
+14:50:20.182 INFO  controller.PersonListController : READING Tom Bomb
+14:50:28.101 INFO  controller.PersonDetailController : UPDATING Tom Bomb
+14:50:28.103 INFO  assignment2.PersonGateway : update person: {"firstName":"Bobby"}
+14:50:28.114 INFO  assignment2.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","dateOfBirth":"1995-02-23"}]
+14:53:00.944 INFO  controller.PersonDetailController : CREATING Lou Smith
+14:53:00.946 INFO  assignment2.PersonGateway : new person: {"firstName":"Lou","lastName":"Smith","dateOfBirth":"1990-01-01"}
+14:53:00.953 INFO  assignment2.PersonGateway : Fetch response: {"id":"4"}
+14:53:00.957 INFO  assignment2.PersonGateway : Fetch response: [{"id":1,"firstName":"Tom","lastName":"Bomb","dateOfBirth":"1995-02-23"}]
+14:56:13.750 INFO  controller.PersonListController : DELETING Tom Bomb
+14:56:49.300 INFO  controller.PersonListController : DELETING Lou Smith
+14:56:49.313 ERROR assignment2.PersonGateway : Non-200 status code returned: HTTP/1.1 404 Not Found
