@@ -7,5 +7,7 @@ assignment2\controller\LoginController.class
 assignment2\model\Person.class
 assignment2\controller\PersonListController.class
 assignment2\model\PersonParameters.class
+assignment3\services\PersonControllerJDBC.class
 assignment2\controller\PersonDetailController.class
 assignment2\SessionGateway.class
+assignment3\Main.class
