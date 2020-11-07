@@ -1,10 +1,7 @@
 package assignment3.services;
 
 import assignment2.model.Person;
-import assignment3.database.DBConnect;
-import assignment3.database.GatewayException;
-import assignment3.database.PersonGatewayMySQL;
-import assignment3.database.SessionGatewayMySQL;
+import assignment3.database.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
@@ -54,9 +51,9 @@ public class PersonControllerJDBC {
             for (Person p : people){
                 JSONObject personJSON = new JSONObject();
                 personJSON.put("id", p.getId());
-                personJSON.put("firstName", p.getFirstName());
-                personJSON.put("lastName", p.getLastName());
-                personJSON.put("dateOfBirth", p.getDateOfBirth());
+                personJSON.put("first_name", p.getFirstName());
+                personJSON.put("last_name", p.getLastName());
+                personJSON.put("date_of_Birth", p.getDateOfBirth());
 
                 peopleJSON.put(personJSON);
             }
@@ -74,15 +71,13 @@ public class PersonControllerJDBC {
                 return new ResponseEntity<>("", HttpStatus.valueOf(401));
 
             int id = new PersonGatewayMySQL(connection).insertPerson(personForm);
-            JSONObject personId = new JSONObject();
-            personId.put("id", id);
-            return new ResponseEntity<>(personId.toString(), HttpStatus.valueOf(200));
-        } catch (GatewayException | SQLException e){
-            if (e instanceof GatewayException)
-                return new ResponseEntity<>(((GatewayException) e).getErrors().toString(), HttpStatus.valueOf(400));
-            else
-                return new ResponseEntity<>( "", HttpStatus.valueOf(500));
+            return new ResponseEntity<>("", HttpStatus.valueOf(200));
+        } catch (GatewayException e) {
+            return new ResponseEntity<>(e.getErrors().toString(), HttpStatus.valueOf(400));
+        } catch(SQLException e) {
+            return new ResponseEntity<>( "", HttpStatus.valueOf(500));
         }
+
     }
 
     @PutMapping("/people/{id}")
@@ -95,12 +90,12 @@ public class PersonControllerJDBC {
 
             new PersonGatewayMySQL(connection).updatePerson(personForm, personId);
             return new ResponseEntity<>("", HttpStatus.valueOf(200));
-        } catch (GatewayException | SQLException e){
-            if (e instanceof GatewayException)
-                return new ResponseEntity<>(((GatewayException) e).getErrors().toString(), HttpStatus.valueOf(400));
-            else
-                return new ResponseEntity<>( "", HttpStatus.valueOf(404));
-            //TODO SQLException should return 500
+        } catch (GatewayException e) {
+            return new ResponseEntity<>(e.getErrors().toString(), HttpStatus.valueOf(400));
+        } catch(NotFoundException e) {
+            return new ResponseEntity<>("", HttpStatus.valueOf(404));
+        } catch(SQLException e){
+                return new ResponseEntity<>( "", HttpStatus.valueOf(500));
         }
     }
 
@@ -113,9 +108,10 @@ public class PersonControllerJDBC {
 
             new PersonGatewayMySQL(connection).deletePerson(personId);
             return new ResponseEntity<>("", HttpStatus.valueOf(200));
-        } catch (SQLException e) {
-            //TODO SQLException should return 500
+        } catch (NotFoundException e) {
             return new ResponseEntity<>( "", HttpStatus.valueOf(404));
+        } catch (SQLException e){
+            return new ResponseEntity<>( "", HttpStatus.valueOf(500));
         }
     }
 
@@ -134,9 +130,10 @@ public class PersonControllerJDBC {
             personJSON.put("dateOfBirth", person.getDateOfBirth());
 
             return new ResponseEntity<>(personJSON.toString(), HttpStatus.valueOf(200));
-        } catch (SQLException e) {
-            //TODO SQLException should return 500
+        } catch (NotFoundException e) {
             return new ResponseEntity<>( "", HttpStatus.valueOf(404));
+        } catch (SQLException e){
+            return new ResponseEntity<>( "", HttpStatus.valueOf(500));
         }
     }
 

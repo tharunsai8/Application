@@ -26,9 +26,8 @@ public class DBConnect {
 
     public DBConnect connectToDB() throws SQLException, IOException {
         //connect to data source and create a connection instance
-        Properties props = getConfig("/db.properties");
+        Properties props = getConfig();
 
-        //create the datasource
         MysqlDataSource ds = new MysqlDataSource();
         ds.setURL(props.getProperty("MYSQL_DB_URL"));
         ds.setUser(props.getProperty("MYSQL_DB_USERNAME"));
@@ -39,10 +38,10 @@ public class DBConnect {
         return this;
     }
 
-    private Properties getConfig(String propsFileName) throws IOException {
+    private Properties getConfig() throws IOException {
         Properties props = new Properties();
 
-        BufferedInputStream propsFile = (BufferedInputStream) Main.class.getResourceAsStream(propsFileName);
+        BufferedInputStream propsFile = (BufferedInputStream) Main.class.getResourceAsStream("/db.properties");
         props.load(propsFile);
         propsFile.close();
 

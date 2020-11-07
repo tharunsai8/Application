@@ -13,9 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 public class LoginControllerJDBC {
@@ -51,14 +55,23 @@ public class LoginControllerJDBC {
         try{
             SessionGatewayMySQL sessionGateway = new SessionGatewayMySQL(connection);
             if(sessionGateway.authenticateUser(loginForm.get("username"), loginForm.get("password"))){
-                String token = "i am a session token";
+                String token = generateToken();
                 sessionGateway.insertToken(loginForm.get("username"), token);
                 return new ResponseEntity<>("{\"session_id\":\"" + token + "\"}", HttpStatus.valueOf(200));
             } else {
                 return new ResponseEntity<>("", HttpStatus.valueOf(401));
             }
-        } catch (SQLException e){
+        } catch (SQLException | NoSuchAlgorithmException e){
             return new ResponseEntity<>("", HttpStatus.valueOf(500));
         }
+    }
+
+    private String generateToken() throws NoSuchAlgorithmException {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        digest.update(UUID.randomUUID().toString().getBytes(StandardCharsets.UTF_8));
+        StringBuilder token = new StringBuilder();
+        for (byte aByte : digest.digest())
+            token.append(Integer.toHexString(0xFF & aByte));
+        return token.toString();
     }
 }
