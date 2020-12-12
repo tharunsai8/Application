@@ -1,6 +1,7 @@
 package backend.database;
 
 import client.model.AuditRecord;
+import client.model.FetchResult;
 import client.model.Person;
 
 import java.sql.Connection;
@@ -20,21 +21,41 @@ public class PersonGatewayMySQL {
         this.connection = connection;
     }
 
-    public ArrayList<Person> fetchPeople() throws SQLException {
-        ArrayList<Person> people = new ArrayList<>();
+    public FetchResult fetchPeople(int pageNum, String lastName) throws SQLException {
+        FetchResult fetchResult = new FetchResult();
         PreparedStatement statement = null;
         ResultSet rows = null;
         try {
-            statement = connection.prepareStatement("SELECT * FROM `People` WHERE 1");
+            statement = connection.prepareStatement("SELECT COUNT(*) FROM `People` WHERE `last_name` LIKE ?");
+            if(lastName == null)
+                statement.setString(1, "%");
+            else
+                statement.setString(1, lastName + "%");
             rows = statement.executeQuery();
-            while(rows.next()){
-                Person person = new Person(rows.getInt(1), rows.getString(2), rows.getString(3), rows.getString(4));
-                people.add(person);
+            rows.next();
+            fetchResult.setNumRows(rows.getInt(1));
+
+            statement = connection.prepareStatement("SELECT * FROM `People` WHERE `last_name` LIKE ?");
+            if(lastName == null)
+                statement.setString(1, "%");
+            else
+                statement.setString(1, lastName + "%");
+            rows = statement.executeQuery();
+
+            rows.absolute((pageNum-1)*10);
+            ArrayList<Person> people = new ArrayList<>();
+            int i = 0;
+            while (rows.next()) {
+                if(++i > 10)
+                    break;
+                people.add(new Person(rows.getInt(1), rows.getString(2), rows.getString(3), rows.getString(4), rows.getString(5)));
             }
+            fetchResult.setPeople(people);
+
         } finally {
             closeStuff(statement, rows);
         }
-        return people;
+        return fetchResult;
     }
 
     public int insertPerson(Map<String, String> personForm, int userId) throws SQLException {
@@ -110,6 +131,9 @@ public class PersonGatewayMySQL {
             statement.setInt(1, personId);
             rows = statement.executeQuery();
             if(rows.next()){
+                if(!personForm.get("last_modified").equals(rows.getString(5))){
+                    throw new UpdateException(new Person(rows.getInt(1), rows.getString(2), rows.getString(3), rows.getString(4), rows.getString(5)));
+                }
                 oldFirstName = rows.getString(2);
                 oldLastName = rows.getString(3);
                 oldDOB = rows.getString(4);
@@ -159,7 +183,7 @@ public class PersonGatewayMySQL {
         InvalidFormException e = new InvalidFormException();
         Set<String> keys = personForm.keySet();
         for(String key : keys) {
-            if (!key.equals("first_name") && !key.equals("last_name") && !key.equals("date_of_birth")){
+            if (!key.equals("first_name") && !key.equals("last_name") && !key.equals("date_of_birth") && !key.equals("last_modified")){
                 e.addError(key + " is an invalid field name");
             }
         }
@@ -206,7 +230,7 @@ public class PersonGatewayMySQL {
             rows = statement.executeQuery();
             if(!rows.next())
                 throw new NotFoundException();
-            return new Person(rows.getInt(1), rows.getString(2), rows.getString(3), rows.getString(4));
+            return new Person(rows.getInt(1), rows.getString(2), rows.getString(3), rows.getString(4), rows.getString(5));
         } finally {
             closeStuff(statement, rows);
         }

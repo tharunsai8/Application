@@ -25,10 +25,10 @@ public class LoginController implements Initializable {
     @FXML
     private PasswordField passwordField;
 
-    public LoginController(){}
+    public LoginController() {}
 
     @FXML
-    void login(ActionEvent event) {
+    void login() {
         SessionGateway sessionGateway = new SessionGateway(usernameTextField.getText(), passwordField.getText());
 
         if (sessionGateway.getStatusCode() == 200) {
@@ -46,9 +46,16 @@ public class LoginController implements Initializable {
         }
     }
 
+    private void bypassLogin(){
+        usernameTextField.setText("u");
+        passwordField.setText("p");
+        login();
+    }
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-
+        if(ViewSwitcher.getInstance().cmdLineParameters.equals("[-d]"))
+            bypassLogin();
     }
 
 }

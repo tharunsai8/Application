@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ListView fx:id="personListView" prefHeight="352.0" prefWidth="600.0" />
-      <Button fx:id="addPersonButton" layoutX="38.0" layoutY="361.0" mnemonicParsing="false" onAction="#addPerson" text="Add Person" />
-      <Button fx:id="deletePersonButton" layoutX="129.0" layoutY="361.0" mnemonicParsing="false" onAction="#deletePerson" text="Delete Person" />
+      <ListView fx:id="personListView" focusTraversable="false" layoutY="77.0" prefHeight="246.0" prefWidth="600.0" />
+      <Label layoutX="228.0" layoutY="14.0" text="Search for last name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchTextField" layoutX="133.0" layoutY="35.0" prefHeight="25.0" prefWidth="447.0" />
+      <Button fx:id="searchButton" layoutX="38.0" layoutY="35.0" mnemonicParsing="false" onAction="#searchPerson" prefHeight="25.0" prefWidth="82.0" text="Search">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="fetchLabel" alignment="CENTER" layoutX="286.0" layoutY="336.0" prefHeight="17.0" prefWidth="287.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="addPersonButton" layoutX="38.0" layoutY="361.0" mnemonicParsing="false" onAction="#addPerson" text="Add Person">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="deletePersonButton" layoutX="129.0" layoutY="361.0" mnemonicParsing="false" onAction="#deletePerson" text="Delete Person">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="firstButton" focusTraversable="false" layoutX="340.0" layoutY="362.0" mnemonicParsing="false" onAction="#getFirstPage" text="First">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="prevButton" focusTraversable="false" layoutX="387.0" layoutY="362.0" mnemonicParsing="false" onAction="#getPrevPage" text="Prev">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="nextButton" focusTraversable="false" layoutX="435.0" layoutY="362.0" mnemonicParsing="false" onAction="#getNextPage" text="Next">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="lastButton" focusTraversable="false" layoutX="485.0" layoutY="362.0" mnemonicParsing="false" onAction="#getLastPage" text="Last">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

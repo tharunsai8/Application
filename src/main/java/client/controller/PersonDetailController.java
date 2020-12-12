@@ -45,7 +45,7 @@ public class PersonDetailController implements Initializable {
     private ArrayList<AuditRecord> auditTrail;
 
     public PersonDetailController(Person person){
-        this.person = new Person(person.getId(), person.getFirstName(), person.getLastName(), person.getDateOfBirth());
+        this.person = new Person(person.getId(), person.getFirstName(), person.getLastName(), person.getDateOfBirth(), person.getLastModified());
         if(this.person.getId() == 0)
             auditTrail = new ArrayList<>();
         else
@@ -61,7 +61,11 @@ public class PersonDetailController implements Initializable {
             createPerson();
         } else {
             logger.info("UPDATING " + this.person.getFirstName() + " " + this.person.getLastName());
-            updatePerson();
+            person = updatePerson();
+            if(person.getId() != 0) {
+                updateDetailView();
+                return;
+            }
         }
         ViewSwitcher.getInstance().switchView(ViewType.PersonListView);
     }
@@ -84,15 +88,16 @@ public class PersonDetailController implements Initializable {
     }
 
     private void createPerson() {
-        PersonParameters.setPersonParam(new Person(0, firstNameTextField.getText(), lastNameTextField.getText(), dateOfBirthTextField.getText()));
+        PersonParameters.setPersonParam(new Person(0, firstNameTextField.getText(), lastNameTextField.getText(), dateOfBirthTextField.getText(), ""));
         PersonParameters.getPersonParam().setId(PersonGateway.insertPerson());
     }
 
-    private void updatePerson() {
+    private Person updatePerson() {
         Person newPerson = PersonParameters.getPersonParam();
         newPerson.setFirstName(firstNameTextField.getText());
         newPerson.setLastName(lastNameTextField.getText());
         newPerson.setDateOfBirth(dateOfBirthTextField.getText());
+        newPerson.setLastModified(person.getLastModified());
         PersonParameters.setPersonParam(newPerson);
         byte bitmap = 0x00;
         if (!newPerson.getFirstName().equals(this.person.getFirstName())){
@@ -105,7 +110,21 @@ public class PersonDetailController implements Initializable {
             bitmap |= 0x04;
         }
 
-        PersonGateway.updatePerson(bitmap);
+        return PersonGateway.updatePerson(bitmap);
+    }
+
+    private void updateDetailView(){
+        auditTrail = PersonGateway.fetchAuditTrail();
+        auditTrailTableView.getItems().clear();
+        for(AuditRecord r: auditTrail){
+            auditTrailTableView.getItems().add(r);
+        }
+
+        firstNameTextField.setText(person.getFirstName());
+        lastNameTextField.setText(person.getLastName());
+        dateOfBirthTextField.setText("" + person.getDateOfBirth());
+
+        ViewSwitcher.getInstance().dialogPopup("Save Error!", "Person has been modified by someone else. Please redo your changed and try again.");
     }
 
     @FXML

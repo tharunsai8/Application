@@ -21,11 +21,13 @@ import client.model.*;
 public class ViewSwitcher implements Initializable{
     private static ViewSwitcher instance = null;
     private static String sessionToken;
+    public String cmdLineParameters;
 
     @FXML
     private BorderPane rootPane;
 
     private ViewSwitcher() {
+        cmdLineParameters = "";
     }
 
     public static ViewSwitcher getInstance() {
@@ -84,5 +86,10 @@ public class ViewSwitcher implements Initializable{
 
     public static void setSessionToken(String sessionToken) {
         ViewSwitcher.sessionToken = sessionToken;
+    }
+
+    public ViewSwitcher setCmdLineParameters(String cmdLineParameters) {
+        this.cmdLineParameters = cmdLineParameters;
+        return this;
     }
 }

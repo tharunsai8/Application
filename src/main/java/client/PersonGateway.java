@@ -1,11 +1,13 @@
 package client;
 
 import client.model.AuditRecord;
+import client.model.FetchResult;
 import client.model.Person;
 import client.model.PersonParameters;
 import client.view.ViewSwitcher;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.*;
+import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -17,6 +19,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
@@ -29,11 +32,16 @@ public class PersonGateway {
     public PersonGateway(){
     }
 
-    public static ArrayList<Person> fetchPeople(){
-        ArrayList<Person> personList = new ArrayList<>();
+    public static FetchResult fetchPeople(int pageNum, String lastName){
+        FetchResult fetchResult = new FetchResult();
         try{
             httpclient = HttpClients.createDefault();
-            HttpGet personRequest = new HttpGet(WS_URL + "/people");
+            URIBuilder builder = new URIBuilder();
+            builder.setScheme("http").setHost("localhost:8080").setPath("/people")
+                    .setParameter("pageNum", String.valueOf(pageNum));
+            if(!lastName.equals(""))
+                    builder.setParameter("lastName", lastName);
+            HttpGet personRequest = new HttpGet(builder.build());
             personRequest.setHeader("Authorization", ViewSwitcher.getSessionToken());
             personRequest.setHeader("Accept", "application/json");
 
@@ -41,26 +49,30 @@ public class PersonGateway {
             response = httpclient.execute(personRequest);
             if (handleErrors(response)){
                 closeStuff();
-                return personList;
+                return fetchResult;
             }
 
             String responseString = getResponseAsString(response);
             if(responseString != null)
-                makePersonList(personList, responseString);
-        } catch (IOException e) {
+                makePersonList(fetchResult, responseString);
+        } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
+        } catch (Exception e){
+            System.out.println("");
         } finally {
             closeStuff();
         }
-        return personList;
+        return fetchResult;
     }
 
 
-    private static void makePersonList(ArrayList<Person> personList, String responseString) {
-        JSONArray jsonArray = new JSONArray(responseString);
-        for(Object obj : jsonArray) {
+    private static void makePersonList(FetchResult fetchResult, String responseString) {
+        JSONObject response = new JSONObject(responseString);
+        fetchResult.setNumRows(response.getInt("num_rows"));
+        JSONArray peopleJSON = response.getJSONArray("people");
+        for(Object obj : peopleJSON) {
             JSONObject jsonObject = (JSONObject) obj;
-            personList.add(new Person(jsonObject.getInt("id"), jsonObject.getString("first_name"), jsonObject.getString("last_name"), jsonObject.getString("date_of_birth")));
+            fetchResult.getPeople().add(new Person(jsonObject.getInt("id"), jsonObject.getString("first_name"), jsonObject.getString("last_name"), jsonObject.getString("date_of_birth"), jsonObject.getString("last_modified")));
         }
     }
 
@@ -121,7 +133,7 @@ public class PersonGateway {
     }
 
 
-    public static void updatePerson(byte bitmap){
+    public static Person updatePerson(byte bitmap){
         try{
             Person person = PersonParameters.getPersonParam();
             httpclient = HttpClients.createDefault();
@@ -134,6 +146,7 @@ public class PersonGateway {
                 personJSON.put("last_name", person.getLastName());
             if((bitmap & 0x04) == 0x04)
                 personJSON.put("date_of_birth", person.getDateOfBirth());
+            personJSON.put("last_modified", person.getLastModified());
 
             String updatePersonString = personJSON.toString();
             logger.info("update person: " + updatePersonString);
@@ -147,9 +160,17 @@ public class PersonGateway {
 
             response = httpclient.execute(updateRequest);
             handleErrors(response);
+            if (response.getStatusLine().getStatusCode() == 412){
+                JSONObject jsonObject = new JSONObject(getResponseAsString(response));
+                return new Person(jsonObject.getInt("id"), jsonObject.getString("first_name"), jsonObject.getString("last_name"), jsonObject.getString("date_of_birth"), jsonObject.getString("last_modified"));
+            }
+            else
+                return new Person();
+
 
         } catch (IOException e) {
             e.printStackTrace();
+            return new Person();
         } finally {
             closeStuff();
         }

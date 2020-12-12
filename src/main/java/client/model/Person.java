@@ -2,6 +2,7 @@ package client.model;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Date;
 
 public class Person {
     private int id;
@@ -9,6 +10,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
+    private String lastModified;
 
     public Person(){
         id = 0;
@@ -18,7 +20,7 @@ public class Person {
         dateOfBirth = LocalDate.of(2000, 1, 1);
     }
 
-    public Person(int id, String firstName, String lastName, String dateOfBirth){
+    public Person(int id, String firstName, String lastName, String dateOfBirth, String lastModified){
         this.id = id;
         LocalDate DOB = LocalDate.parse(dateOfBirth);
         Period period = Period.between(DOB, LocalDate.now());
@@ -26,6 +28,7 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = DOB;
+        this.lastModified = lastModified;
     }
 
     @Override
@@ -73,5 +76,13 @@ public class Person {
         this.dateOfBirth = LocalDate.parse(dateOfBirth);
         Period period = Period.between(this.dateOfBirth, LocalDate.now());
         this.age = period.getYears();
+    }
+
+    public String getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(String lastModified) {
+        this.lastModified = lastModified;
     }
 }

@@ -1,6 +1,7 @@
 package backend.services;
 
 import client.model.AuditRecord;
+import client.model.FetchResult;
 import client.model.Person;
 import backend.database.*;
 import org.apache.logging.log4j.LogManager;
@@ -42,23 +43,30 @@ public class PersonControllerJDBC {
     }
 
     @GetMapping("/people")
-    public ResponseEntity<String> fetchPeople(@RequestHeader Map<String, String> headers){
+    public ResponseEntity<String> fetchPeople(@RequestHeader Map<String, String> headers,
+                                              @RequestParam(defaultValue = "1") int pageNum,
+                                              @RequestParam(required = false) String lastName){
         try{
             if(!new SessionGatewayMySQL(connection).verifyToken(getSessionToken(headers)))
                 return new ResponseEntity<>("", HttpStatus.valueOf(401));
 
+            FetchResult fetchResult = new PersonGatewayMySQL(connection).fetchPeople(pageNum, lastName);
             JSONArray peopleJSON = new JSONArray();
-            ArrayList<Person> people = new PersonGatewayMySQL(connection).fetchPeople();
-            for (Person p : people){
+            for (Person p : fetchResult.getPeople()){
                 JSONObject personJSON = new JSONObject();
                 personJSON.put("id", p.getId());
                 personJSON.put("first_name", p.getFirstName());
                 personJSON.put("last_name", p.getLastName());
                 personJSON.put("date_of_birth", p.getDateOfBirth());
+                personJSON.put("last_modified", p.getLastModified());
 
                 peopleJSON.put(personJSON);
             }
-            return new ResponseEntity<>(peopleJSON.toString(), HttpStatus.valueOf(200));
+            JSONObject fetchJSON = new JSONObject();
+            fetchJSON.put("num_rows", fetchResult.getNumRows());
+            fetchJSON.put("people", peopleJSON);
+
+            return new ResponseEntity<>(fetchJSON.toString(), HttpStatus.valueOf(200));
         } catch (SQLException e){
             return new ResponseEntity<>("", HttpStatus.valueOf(500));
         }
@@ -98,7 +106,15 @@ public class PersonControllerJDBC {
         } catch(NotFoundException e) {
             return new ResponseEntity<>("", HttpStatus.valueOf(404));
         } catch(SQLException e){
-                return new ResponseEntity<>( "", HttpStatus.valueOf(500));
+            return new ResponseEntity<>( "", HttpStatus.valueOf(500));
+        } catch (UpdateException e){
+            JSONObject personJSON = new JSONObject();
+            personJSON.put("id", e.person.getId());
+            personJSON.put("first_name", e.person.getFirstName());
+            personJSON.put("last_name", e.person.getLastName());
+            personJSON.put("date_of_birth", e.person.getDateOfBirth());
+            personJSON.put("last_modified", e.person.getLastModified());
+            return new ResponseEntity<>( personJSON.toString(), HttpStatus.valueOf(412));
         }
     }
 
@@ -131,6 +147,7 @@ public class PersonControllerJDBC {
             personJSON.put("first_name", person.getFirstName());
             personJSON.put("last_name", person.getLastName());
             personJSON.put("date_of_birth", person.getDateOfBirth());
+            personJSON.put("last_modified", person.getLastModified());
 
             return new ResponseEntity<>(personJSON.toString(), HttpStatus.valueOf(200));
         } catch (NotFoundException e) {

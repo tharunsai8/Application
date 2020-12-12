@@ -7,6 +7,7 @@ C:\dev\cs4743assign3\src\main\java\client\controller\LoginController.java
 C:\dev\cs4743assign3\src\main\java\client\controller\PersonDetailController.java
 C:\dev\cs4743assign3\src\main\java\client\SessionGateway.java
 C:\dev\cs4743assign3\src\main\java\client\view\ViewType.java
+C:\dev\cs4743assign3\src\main\java\backend\database\UpdateException.java
 C:\dev\cs4743assign3\src\main\java\client\model\AuditRecord.java
 C:\dev\cs4743assign3\src\main\java\client\model\Person.java
 C:\dev\cs4743assign3\src\main\java\client\controller\PersonListController.java
@@ -14,6 +15,7 @@ C:\dev\cs4743assign3\src\main\java\backend\database\InvalidFormException.java
 C:\dev\cs4743assign3\src\main\java\client\Main.java
 C:\dev\cs4743assign3\src\main\java\backend\database\SessionGatewayMySQL.java
 C:\dev\cs4743assign3\src\main\java\client\PersonGateway.java
+C:\dev\cs4743assign3\src\main\java\client\model\FetchResult.java
 C:\dev\cs4743assign3\src\main\java\backend\Main.java
 C:\dev\cs4743assign3\src\main\java\backend\services\PersonControllerJDBC.java
 C:\dev\cs4743assign3\src\main\java\backend\services\LoginControllerJDBC.java
