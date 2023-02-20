@@ -7,6 +7,7 @@
     <groupId>xsj385</groupId>
     <artifactId>Assignment5</artifactId>
     <version>1</version>
+    <packaging>war</packaging>
 
     <parent> <!-- from spring boot tutorial -->
         <groupId>org.springframework.boot</groupId>
